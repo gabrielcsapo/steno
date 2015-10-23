@@ -14,6 +14,7 @@
 		9A5403E41BD9A656008EE92D /* stenoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5403E31BD9A656008EE92D /* stenoUITests.swift */; };
 		9AF482281BD9B1AF00C92D5E /* commands.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AF482271BD9B1AF00C92D5E /* commands.json */; settings = {ASSET_TAGS = (); }; };
 		9AF4822A1BD9B24D00C92D5E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF482291BD9B24D00C92D5E /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		9AF4822C1BDAB8B200C92D5E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4822B1BDAB8B200C92D5E /* App.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9A5403E51BD9A656008EE92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AF482271BD9B1AF00C92D5E /* commands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commands.json; sourceTree = "<group>"; };
 		9AF482291BD9B24D00C92D5E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		9AF4822B1BDAB8B200C92D5E /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				9AF482291BD9B24D00C92D5E /* SwiftyJSON.swift */,
 				9A5403C81BD9A656008EE92D /* AppDelegate.swift */,
+				9AF4822B1BDAB8B200C92D5E /* App.swift */,
 				9A5403CA1BD9A656008EE92D /* Assets.xcassets */,
 				9A5403CC1BD9A656008EE92D /* MainMenu.xib */,
 				9A5403CF1BD9A656008EE92D /* Info.plist */,
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF4822C1BDAB8B200C92D5E /* App.swift in Sources */,
 				9A5403C91BD9A656008EE92D /* AppDelegate.swift in Sources */,
 				9AF4822A1BD9B24D00C92D5E /* SwiftyJSON.swift in Sources */,
 			);

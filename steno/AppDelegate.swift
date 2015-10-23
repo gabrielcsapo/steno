@@ -9,7 +9,7 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSUserNotificationCenterDelegate {
 
     @IBOutlet weak var statusMenu: NSMenu!
     
@@ -18,6 +18,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     func quitClicked() {
         NSApplication.sharedApplication().terminate(self)
+    }
+    
+    func editConfigClicked() {
+        let command = "open " + app.configPath
+        app.runCommand("/bin/sh", args: "-c", command)
     }
     
     @IBAction func commandClicked(sender: NSMenuItem) {
@@ -36,6 +41,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         }
     }
     
+    func menuWillOpen(menu: NSMenu) {
+        app.update()
+    }
+    
     func userNotificationCenter (center: NSUserNotificationCenter, didActivateNotification notification: NSUserNotification){
         let alert = NSAlert()
         alert.messageText = notification.title!
@@ -47,6 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     func applicationWillTerminate(aNotification: NSNotification) {}
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
+        statusMenu.delegate = self
         app.setup(self)
     }
     

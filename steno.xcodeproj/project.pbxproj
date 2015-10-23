@@ -79,10 +79,10 @@
 		9A5403BC1BD9A656008EE92D = {
 			isa = PBXGroup;
 			children = (
+				9A5403C61BD9A656008EE92D /* Products */,
 				9A5403C71BD9A656008EE92D /* steno */,
 				9A5403D71BD9A656008EE92D /* stenoTests */,
 				9A5403E21BD9A656008EE92D /* stenoUITests */,
-				9A5403C61BD9A656008EE92D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +99,12 @@
 		9A5403C71BD9A656008EE92D /* steno */ = {
 			isa = PBXGroup;
 			children = (
-				9AF482291BD9B24D00C92D5E /* SwiftyJSON.swift */,
-				9A5403C81BD9A656008EE92D /* AppDelegate.swift */,
+				9AF4822D1BDABB4B00C92D5E /* Library */,
 				9AF4822B1BDAB8B200C92D5E /* App.swift */,
+				9A5403C81BD9A656008EE92D /* AppDelegate.swift */,
 				9A5403CA1BD9A656008EE92D /* Assets.xcassets */,
-				9A5403CC1BD9A656008EE92D /* MainMenu.xib */,
 				9A5403CF1BD9A656008EE92D /* Info.plist */,
+				9A5403CC1BD9A656008EE92D /* MainMenu.xib */,
 				9AF482271BD9B1AF00C92D5E /* commands.json */,
 			);
 			path = steno;
@@ -113,8 +113,8 @@
 		9A5403D71BD9A656008EE92D /* stenoTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A5403D81BD9A656008EE92D /* stenoTests.swift */,
 				9A5403DA1BD9A656008EE92D /* Info.plist */,
+				9A5403D81BD9A656008EE92D /* stenoTests.swift */,
 			);
 			path = stenoTests;
 			sourceTree = "<group>";
@@ -122,10 +122,18 @@
 		9A5403E21BD9A656008EE92D /* stenoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9A5403E31BD9A656008EE92D /* stenoUITests.swift */,
 				9A5403E51BD9A656008EE92D /* Info.plist */,
+				9A5403E31BD9A656008EE92D /* stenoUITests.swift */,
 			);
 			path = stenoUITests;
+			sourceTree = "<group>";
+		};
+		9AF4822D1BDABB4B00C92D5E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				9AF482291BD9B24D00C92D5E /* SwiftyJSON.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +310,7 @@
 				9A5403CD1BD9A656008EE92D /* Base */,
 			);
 			name = MainMenu.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

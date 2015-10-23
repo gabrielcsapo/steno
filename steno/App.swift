@@ -10,21 +10,7 @@ import Foundation
 import Cocoa
 
 class App: NSObject {
-    @IBAction func commandClicked(sender: NSMenuItem) {
-        if let command = sender.representedObject as? Dictionary<String, AnyObject> {
-            let commandString = command["command"]! as! String
-            let (output, error, status) = runCommand("/bin/sh", args: "-c", commandString)
-            print(output)
-            print(error)
-            print(status)
-            let notification = NSUserNotification.init()
-            notification.title = commandString;
-            notification.informativeText = output.description;
-            notification.soundName = NSUserNotificationDefaultSoundName;
-            
-            NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification);
-        }
-    }
+    
     func setup(appDelegate: AppDelegate) {
         let icon = NSImage(named: "statusIcon")
         icon?.template = true

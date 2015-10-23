@@ -12,6 +12,8 @@
 		9A5403CE1BD9A656008EE92D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A5403CC1BD9A656008EE92D /* MainMenu.xib */; };
 		9A5403D91BD9A656008EE92D /* stenoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5403D81BD9A656008EE92D /* stenoTests.swift */; };
 		9A5403E41BD9A656008EE92D /* stenoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5403E31BD9A656008EE92D /* stenoUITests.swift */; };
+		9AF482281BD9B1AF00C92D5E /* commands.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AF482271BD9B1AF00C92D5E /* commands.json */; settings = {ASSET_TAGS = (); }; };
+		9AF4822A1BD9B24D00C92D5E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF482291BD9B24D00C92D5E /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		9A5403DF1BD9A656008EE92D /* stenoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stenoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5403E31BD9A656008EE92D /* stenoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stenoUITests.swift; sourceTree = "<group>"; };
 		9A5403E51BD9A656008EE92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF482271BD9B1AF00C92D5E /* commands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commands.json; sourceTree = "<group>"; };
+		9AF482291BD9B24D00C92D5E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +97,12 @@
 		9A5403C71BD9A656008EE92D /* steno */ = {
 			isa = PBXGroup;
 			children = (
+				9AF482291BD9B24D00C92D5E /* SwiftyJSON.swift */,
 				9A5403C81BD9A656008EE92D /* AppDelegate.swift */,
 				9A5403CA1BD9A656008EE92D /* Assets.xcassets */,
 				9A5403CC1BD9A656008EE92D /* MainMenu.xib */,
 				9A5403CF1BD9A656008EE92D /* Info.plist */,
+				9AF482271BD9B1AF00C92D5E /* commands.json */,
 			);
 			path = steno;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			files = (
 				9A5403CB1BD9A656008EE92D /* Assets.xcassets in Resources */,
 				9A5403CE1BD9A656008EE92D /* MainMenu.xib in Resources */,
+				9AF482281BD9B1AF00C92D5E /* commands.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5403C91BD9A656008EE92D /* AppDelegate.swift in Sources */,
+				9AF4822A1BD9B24D00C92D5E /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +478,7 @@
 				9A5403EA1BD9A656008EE92D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A5403EB1BD9A656008EE92D /* Build configuration list for PBXNativeTarget "stenoTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +487,7 @@
 				9A5403ED1BD9A656008EE92D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A5403EE1BD9A656008EE92D /* Build configuration list for PBXNativeTarget "stenoUITests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +496,7 @@
 				9A5403F01BD9A656008EE92D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

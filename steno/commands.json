@@ -1,0 +1,26 @@
+{
+  "groups": [
+    {
+      "name": "heliosnodeweb",
+      "commands": [
+        {
+          "name": "pull",
+          "command": "cd /Users/gacsapo/Desktop/helios/dev-environment/deps/heliosnodeweb;git pull origin master;"
+        }
+      ]
+    },
+    {
+      "name": "testing",
+      "commands": [
+        {
+          "name": "test",
+          "command": "echo \"testing\""
+        },
+        {
+          "name": "copy",
+          "command": "echo \"gabe is awesome\" | pbcopy"
+        }
+      ]
+    }
+  ]
+}

@@ -34,10 +34,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSUserNotifi
             print(status)
             let notification = NSUserNotification.init()
             notification.title = commandString;
-            notification.informativeText = output.description;
-            notification.soundName = NSUserNotificationDefaultSoundName;
+            notification.subtitle = error.description
+            notification.informativeText = output.description
+            notification.soundName = NSUserNotificationDefaultSoundName
             
-            NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification);
+            NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
         }
     }
     
@@ -45,10 +46,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSUserNotifi
         app.update()
     }
     
+    func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
+        return true
+    }
+    
     func userNotificationCenter (center: NSUserNotificationCenter, didActivateNotification notification: NSUserNotification){
+        var content = notification.subtitle
+        content?.appendContentsOf("\n")
+        content?.appendContentsOf(notification.informativeText!)
         let alert = NSAlert()
         alert.messageText = notification.title!
-        alert.informativeText = notification.informativeText!
+        alert.informativeText = content!
         alert.runModal()
         NSUserNotificationCenter.defaultUserNotificationCenter().removeDeliveredNotification(notification)
     }

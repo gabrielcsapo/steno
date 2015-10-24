@@ -1,24 +1,31 @@
 {
   "groups": [
     {
-      "name": "heliosnodeweb",
-      "commands": [
-        {
-          "name": "pull",
-          "command": "cd /Users/gacsapo/Desktop/helios/dev-environment/deps/heliosnodeweb;git pull origin master;"
-        }
-      ]
-    },
-    {
       "name": "testing",
       "commands": [
         {
-          "name": "test",
+          "name": "echo",
           "command": "echo \"testing\""
         },
         {
           "name": "copy",
-          "command": "echo \"gabe is awesome\" | pbcopy"
+          "command": "echo \"check this out\" | pbcopy"
+        },
+        {
+          "name": "cd",
+          "command": "cd;cd Desktop;"
+        },
+        {
+          "name": "mkdir",
+          "command": "cd;cd Desktop;mkdir steno;"
+        },
+        {
+          "name": "curl",
+          "command":"curl www.google.com"
+        },
+        {
+          "name": "curl and write to file",
+          "command": "cd;cd Desktop;mkdir steno;cd steno;curl www.google.com > google.html"
         }
       ]
     }

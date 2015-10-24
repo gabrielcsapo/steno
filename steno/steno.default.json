@@ -21,11 +21,18 @@
         },
         {
           "name": "curl",
-          "command":"curl www.google.com"
+          "command": "curl -i www.google.com"
         },
         {
           "name": "curl and write to file",
           "command": "cd;cd Desktop;mkdir steno;cd steno;curl www.google.com > google.html"
+        },
+        {
+          "name": "input echo",
+          "command": "echo \"your name is {name}\"",
+          "args": {
+            "name": "What is your name"
+          }
         }
       ]
     }

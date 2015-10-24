@@ -27,11 +27,37 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSUserNotifi
     
     @IBAction func commandClicked(sender: NSMenuItem) {
         if let command = sender.representedObject as? Dictionary<String, AnyObject> {
-            let commandString = command["command"]! as! String
+            var commandString = command["command"]! as! String
             let (output, error, status) = app.runCommand("/bin/sh", args: "-c", commandString)
             print(output)
             print(error)
             print(status)
+            
+            var args = Dictionary<String, AnyObject>()
+            
+            if(command["args"] !== nil) {
+                for key in (command["args"] as? Dictionary<String, AnyObject>)!{
+                    let alert = NSAlert()
+                    alert.messageText = key.1 as! String
+                    alert.addButtonWithTitle("Ok")
+                    alert.addButtonWithTitle("Cancel")
+                    let input = NSTextField.init(frame: NSMakeRect(0, 0, 200, 24))
+                    input.stringValue = ""
+                    alert.accessoryView = input;
+                    let button = alert.runModal()
+
+                    if (button == NSAlertFirstButtonReturn) {
+                        args[key.0] = input.stringValue
+                    } else if (button == NSAlertSecondButtonReturn) {
+                        args[key.0] = ""
+                    }
+                }
+                for key in (args) {
+                    let needle = "{" + key.0 + "}"
+                    commandString = commandString.stringByReplacingOccurrencesOfString(needle, withString: key.1 as! String)
+                }
+            }
+            
             let notification = NSUserNotification.init()
             notification.title = commandString;
             notification.subtitle = error.description

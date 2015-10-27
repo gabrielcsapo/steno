@@ -29,10 +29,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSUserNotifi
         if let command = sender.representedObject as? Dictionary<String, AnyObject> {
             var commandString = command["command"]! as! String
             let typeString = command["type"] as! String
-            let (output, error, status) = app.runCommand("/bin/sh", type:typeString, args: "-c", commandString)
-            print(output)
-            print(error)
-            print(status)
             
             var args = Dictionary<String, AnyObject>()
             
@@ -57,16 +53,35 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSUserNotifi
                     let needle = "{" + key.0 + "}"
                     commandString = commandString.stringByReplacingOccurrencesOfString(needle, withString: key.1 as! String)
                 }
-            }
-            
-            if(typeString == "async") {
-                let notification = NSUserNotification.init()
-                notification.title = commandString;
-                notification.subtitle = error.description
-                notification.informativeText = output.description
-                notification.soundName = NSUserNotificationDefaultSoundName
+                let (output, error, status) = app.runCommand("/bin/sh", type:typeString, args: "-c", commandString)
+                print(output)
+                print(error)
+                print(status)
                 
-                NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+                if(typeString == "async") {
+                    let notification = NSUserNotification.init()
+                    notification.title = commandString;
+                    notification.subtitle = error.description
+                    notification.informativeText = output.description
+                    notification.soundName = NSUserNotificationDefaultSoundName
+                    
+                    NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+                }
+            } else {
+                let (output, error, status) = app.runCommand("/bin/sh", type:typeString, args: "-c", commandString)
+                print(output)
+                print(error)
+                print(status)
+                
+                if(typeString == "async") {
+                    let notification = NSUserNotification.init()
+                    notification.title = commandString;
+                    notification.subtitle = error.description
+                    notification.informativeText = output.description
+                    notification.soundName = NSUserNotificationDefaultSoundName
+                    
+                    NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+                }
             }
         }
     }

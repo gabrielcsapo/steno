@@ -22,13 +22,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSUserNotifi
     
     func editConfigClicked() {
         let command = "open " + app.configPath
-        app.runCommand("/bin/sh", args: "-c", command)
+        app.runCommand("/bin/sh", type:"async", args: "-c", command)
     }
     
     @IBAction func commandClicked(sender: NSMenuItem) {
         if let command = sender.representedObject as? Dictionary<String, AnyObject> {
             var commandString = command["command"]! as! String
-            let (output, error, status) = app.runCommand("/bin/sh", args: "-c", commandString)
+            let typeString = command["type"] as! String
+            let (output, error, status) = app.runCommand("/bin/sh", type:typeString, args: "-c", commandString)
             print(output)
             print(error)
             print(status)
@@ -58,13 +59,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSUserNotifi
                 }
             }
             
-            let notification = NSUserNotification.init()
-            notification.title = commandString;
-            notification.subtitle = error.description
-            notification.informativeText = output.description
-            notification.soundName = NSUserNotificationDefaultSoundName
-            
-            NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+            if(typeString == "async") {
+                let notification = NSUserNotification.init()
+                notification.title = commandString;
+                notification.subtitle = error.description
+                notification.informativeText = output.description
+                notification.soundName = NSUserNotificationDefaultSoundName
+                
+                NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+            }
         }
     }
     

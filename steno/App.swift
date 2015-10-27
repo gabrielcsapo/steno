@@ -80,38 +80,50 @@ class App: NSObject {
         return NSDate.init()
     }
     
-    func runCommand(cmd : String, args : String...) -> (output: [String], error: [String], exitCode: Int32) {
+    func runCommand(cmd: String, type: String, args: String...) -> (output: [String], error: [String], exitCode: Int32) {
         
-        var output : [String] = []
-        var error : [String] = []
-        
-        let task = NSTask()
-        task.launchPath = cmd
-        task.arguments = args
-        
-        let outpipe = NSPipe()
-        task.standardOutput = outpipe
-        let errpipe = NSPipe()
-        task.standardError = errpipe
-        
-        task.launch()
-        
-        let outdata = outpipe.fileHandleForReading.readDataToEndOfFile()
-        print(outdata)
-        if var string = String.fromCString(UnsafePointer(outdata.bytes)) {
-            string = string.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
-            output = string.componentsSeparatedByString("\n")
+        if(type == "background") {
+            var error: NSDictionary?
+            let s = String(format:
+            "tell application \"Terminal\"\n" +
+                "activate\n" +
+                "do script \"%@\"\n" +
+            "end tell", args[1])
+            print(s)
+            let terminal = NSAppleScript.init(source:s)
+            terminal?.executeAndReturnError(&error)
+            print(error)
+            return ([], [], 0)
+        } else {
+            var output : [String] = []
+            var error : [String] = []
+            
+            let task = NSTask()
+            task.launchPath = cmd
+            task.arguments = args
+            
+            let outpipe = NSPipe()
+            task.standardOutput = outpipe
+            let errpipe = NSPipe()
+            task.standardError = errpipe
+            
+            task.launch()
+            
+            let outdata = outpipe.fileHandleForReading.readDataToEndOfFile()
+            print(outdata)
+            if var string = String.fromCString(UnsafePointer(outdata.bytes)) {
+                string = string.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+                output = string.componentsSeparatedByString("\n")
+            }
+            
+            let errdata = errpipe.fileHandleForReading.readDataToEndOfFile()
+            if var string = String.fromCString(UnsafePointer(errdata.bytes)) {
+                string = string.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+                error = string.componentsSeparatedByString("\n")
+            }
+            task.waitUntilExit()
+            let status = task.terminationStatus
+            return (output, error, status)
         }
-        
-        let errdata = errpipe.fileHandleForReading.readDataToEndOfFile()
-        if var string = String.fromCString(UnsafePointer(errdata.bytes)) {
-            string = string.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
-            error = string.componentsSeparatedByString("\n")
-        }
-        
-        task.waitUntilExit()
-        let status = task.terminationStatus
-        
-        return (output, error, status)
     }
 }

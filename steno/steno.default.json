@@ -5,12 +5,20 @@
       "commands": [
         {
           "name": "echo",
-          "command": "echo \"testing\"",
-          "type": "async"
+          "command": "echo 'testing'",
+          "type": "background"
+        },
+        {
+          "name": "echo input",
+          "command": "echo 'hello {name}'",
+          "args": {
+            "name": "Please enter your name"
+          },
+          "type": "background"
         },
         {
           "name": "copy",
-          "command": "echo \"check this out\" | pbcopy",
+          "command": "echo 'check this out' | pbcopy",
           "type": "async"
         },
         {

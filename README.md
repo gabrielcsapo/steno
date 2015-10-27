@@ -1,4 +1,7 @@
-# steno
+<div style="text-align:center">
+<h1>Steno</h1>
+<img src="./github/icon.png"/>
+</div>
 
 Running scripts is a breeze when you can run your scripts with other scripts, but don't you hate opening up terminal? 
 

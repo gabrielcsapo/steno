@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<div align="center">
 <h1>Steno</h1>
 <img src="./github/icon.png"/>
 </div>

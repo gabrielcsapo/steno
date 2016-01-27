@@ -1,9 +1,9 @@
 <div align="center">
 <h1>Steno</h1>
-<img src="./github/icon.png"/>
+<img src="./github/app.png"/>
 </div>
 
-Running scripts is a breeze when you can run your scripts with other scripts, but don't you hate opening up terminal? 
+Running scripts is a breeze when you can run your scripts with other scripts, but don't you hate opening up terminal?
 
 Steno is a place to put all those scripts in plain site seperated by your own grouping (work, home, garden, etc)
 

@@ -1,15 +1,15 @@
 <div align="center">
 <h1>Steno</h1>
-<img src="./assets/app.png"/>
+<img src="./assets/steno.png"/>
 </div>
+
+> based on https://github.com/fitztrev/shuttle
 
 Running scripts is a breeze when you can run your scripts with other scripts, but don't you hate opening up terminal?
 
-Steno is a place to put all those scripts in plain site seperated by your own grouping (work, home, garden, etc)
+Steno is a place to put all those scripts in plain site separated by your own grouping (work, home, garden, etc)
 
 Current features that Steno supports
-
-![](./assets/steno.gif)
 
 # Example Configuration
 

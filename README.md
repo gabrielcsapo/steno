@@ -1,7 +1,5 @@
-<div align="center">
-<h1>Steno</h1>
-<img src="./assets/steno.png"/>
-</div>
+# steno
+<img width="250px" src="./assets/steno.png"/>
 
 > based on https://github.com/fitztrev/shuttle
 

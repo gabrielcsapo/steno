@@ -1,17 +1,13 @@
 # steno
+
 <img width="250px" src="./assets/steno.png"/>
 
-> based on https://github.com/fitztrev/shuttle
-
 Running scripts is a breeze when you can run your scripts with other scripts, but don't you hate opening up terminal?
-
 Steno is a place to put all those scripts in plain site separated by your own grouping (work, home, garden, etc)
-
-Current features that Steno supports
 
 # Example Configuration
 
-```
+```javascript
 {
   "groups": [
     {
@@ -68,3 +64,7 @@ Current features that Steno supports
   ]
 }
 ```
+
+## Contributions
+
+> based on https://github.com/fitztrev/shuttle

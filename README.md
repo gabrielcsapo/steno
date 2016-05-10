@@ -1,6 +1,6 @@
 <div align="center">
 <h1>Steno</h1>
-<img src="./github/app.png"/>
+<img src="./assets/app.png"/>
 </div>
 
 Running scripts is a breeze when you can run your scripts with other scripts, but don't you hate opening up terminal?
@@ -9,7 +9,7 @@ Steno is a place to put all those scripts in plain site seperated by your own gr
 
 Current features that Steno supports
 
-![](./github/steno.gif)
+![](./assets/steno.gif)
 
 # Example Configuration
 

@@ -1,52 +1,82 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="http://gabrielcsapo.github.io/assets/steno.png">
-    <link rel="stylesheet" type="text/css" href="assets/steno.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="assets/steno.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
     <title>Steno | A simple SSH shortcut menu for OS X</title>
 </head>
-
 <body>
-    <div class="container">
+    <div style="width:100%;background-color:rgba(149, 149, 149, 0.25);height:500px;">
         <div class="grid">
-            <div class="col-md-6 col-lg-6">
-                <h1>Steno</h1>
-                <p class="lead">A simple SSH shortcut menu for OSX</p>
-                <br>
-                <br>
+            <div class="col-12-12 text-center">
+                <h1 style="font-weight:400;">Steno</h1>
+                <h3 style="font-weight:300;"><i>A simple SSH shortcut menu for OSX</i></h3>
+                <img alt="Shuttle" style="width:250px;" src="assets/steno.png">
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <hr style="margin-top:0px;">
+    <div class="animation">
+        <img alt="how Shuttle works" class="responsive" src="assets/example.gif">
+    </div>
+    <hr>
+    <div style="width:70%;margin:0 auto;">
+        <div class="grid">
+            <div class="col-12-12">
                 <div class="text-center">
-                    <p><a href="https://github.com/gabrielcsapo/steno/releases" class="btn btn-block btn-success btn-lg"><i class="glyphicon glyphicon-arrow-down"></i>&nbsp; Download Shuttle</a></p>
-                    <p class="text-muted"><em>— or —</em></p>
-                    <p><a href="https://github.com/gabrielcsapo/steno">View on Github</a></p>
+                    <a class="btn btn-success" style="width:89%;text-decoration:none;" href="https://github.com/gabrielcsapo/steno/releases">
+                        <i class="glyphicon glyphicon-arrow-down"></i>
+                        Download Shuttle
+                    </a>
+                    <p>
+                        <em>— or —</em>
+                    </p>
+                    <p>
+                        <a href="https://github.com/gabrielcsapo/steno">
+                            View on Github
+                        </a>
+                    </p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6"><img src="assets/steno.png" alt="Shuttle" class="pull-right img-responsive hidden-xs"></div>
         </div>
-        <hr>
-        <div class="animation"><img src="assets/example.gif" alt="How Shuttle works" class="img-responsive"></div>
-        <hr>
-        <div class="row">
-            <div class="col-md-6 col-lg-6">
+        <div class="grid">
+            <div class="col-6-12">
                 <h3>About</h3>
-                <p>Steno was created by <a href="http://gabrielcsapo.com">Gabriel J. Csapo</a>.</p>
+                <p>Steno was created by <a href="http://gabrielcsapo.com">Gabriel
+                J. Csapo</a>.</p>
                 <p>It does exactly what you see above and nothing more.</p>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-6-12">
                 <h3>Configuration</h3>
                 <ol>
-                    <li>Open the app and choose Configure to edit <code>~/.steno.json</code></li>
-                    <li>Define the menu items and the actions that are run when clicked</li>
-                    <li>Read <a href="https://github.com/gabrielcsapo/steno">more configuration options</a>.</li>
+                    <li>Open the app and choose Configure to edit
+                    <code>~/.steno.json</code></li>
+                    <li>Define the menu items and the actions that are run when
+                    clicked</li>
+                    <li>Read <a href="https://github.com/gabrielcsapo/steno">more
+                    configuration options</a>.
+                    </li>
                 </ol>
             </div>
         </div>
     </div>
-
-
 </body>
-
 </html>

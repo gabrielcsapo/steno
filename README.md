@@ -1,8 +1,15 @@
 # steno
 
-<img width="250px" src="./assets/steno.png"/>
+> A simple SSH shortcut menu for OS X
+> based on https://github.com/fitztrev/shuttles
 
+<img width="250px" align="center" src="./assets/steno.png"/>
+
+# Mission Statement
 Running scripts is a breeze when you can run your scripts with other scripts, but don't you hate opening up terminal?
+
+# Use Case
+
 Steno is a place to put all those scripts in plain site separated by your own grouping (work, home, garden, etc)
 
 # Example Configuration
@@ -64,7 +71,3 @@ Steno is a place to put all those scripts in plain site separated by your own gr
   ]
 }
 ```
-
-## Contributions
-
-> based on https://github.com/fitztrev/shuttle

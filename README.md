@@ -1,7 +1,6 @@
 # steno
 
-> A simple SSH shortcut menu for OS X
-> based on https://github.com/fitztrev/shuttle
+> ⌨️ A simple SSH shortcut menu for OS X
 
 <img width="250px" align="center" src="./docs/assets/steno.png"/>
 
